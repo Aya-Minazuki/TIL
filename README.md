@@ -47,3 +47,46 @@ class Solution:
             if count[index] < 0:
                 return ch
         return ""  # 理论上不会走到这里
+
+
+import numpy as np  # 行业惯例，大家都叫它 np
+
+# 1. 把普通列表变成 Numpy 数组
+py_list = [1, 2, 3]
+np_array = np.array([1, 2, 3])
+
+print(np_array)
+# 输出: [1 2 3]  (注意：它打印出来没有逗号分隔，这是它的小特征)
+
+Python基础循环
+
+data = [1, 2, 3]
+new_data = []
+for x in data:
+    new_data.append(x + 1)
+# 结果: [2, 3, 4]
+
+numpy消灭循环
+
+data = np.array([1, 2, 3])
+# 见证奇迹的时刻：直接对整个数组加 1
+new_data = data + 1 
+# 结果: array([2, 3, 4])
+
+在 AI 报错里，90% 的错误都是 Shape Mismatch（形状不匹配）。 你必须学会像呼吸一样自然地查看数据的“形状”。
+
+1D (向量): [1, 2, 3] -> Shape: (3,)
+
+**2D (矩阵/黑白图):**Excel 表格一样 -> Shape: (行数, 列数)
+
+3D (张量/彩色图): 立方体 -> Shape: (高度, 宽度, 颜色通道)
+
+# 创建一个 2行 3列 的矩阵
+matrix = np.array([
+    [1, 2, 3],
+    [4, 5, 6]
+])
+
+print(matrix.shape)
+# 输出: (2, 3) 
+# 意思是：我有 2 个行，每行有 3 个数。
